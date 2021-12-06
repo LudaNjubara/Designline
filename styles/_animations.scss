@@ -1,0 +1,126 @@
+@keyframes kvadratKapaAnimacija {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(0.99) translateY(20px);
+  }
+}
+
+@keyframes kvadratAnimacija {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes sjenaAnimacija {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes laptopAnimacija {
+  0% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0) !important;
+  }
+}
+
+@keyframes tockaAnimacija {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes heroTekstAnimacija {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollIkonaAnimacija {
+  from {
+    opacity: 0;
+    transform: scale(0.7) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(10px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: -170px;
+  }
+  70% {
+    background-position: 500px;
+  }
+  100% {
+    background-position: 500px;
+  }
+}
+
+@keyframes closeSection {
+  0% {
+    visibility: "visible";
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: initial;
+  }
+  99.9999% {
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(70px);
+    visibility: "hidden";
+    display: none;
+    pointer-events: none;
+  }
+}
+
+@keyframes newSection {
+  0% {
+    display: none;
+    visibility: "hidden";
+    transform: translateY(70px);
+    opacity: 0;
+    pointer-events: none;
+  }
+  0.0001% {
+    display: flex;
+    visibility: "visible";
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    visibility: "visible";
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
