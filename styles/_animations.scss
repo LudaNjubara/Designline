@@ -1,3 +1,5 @@
+/* Home - animacije */
+
 @keyframes kvadratKapaAnimacija {
   from {
     transform: scale(1) translateY(0);
@@ -82,6 +84,8 @@
   }
 }
 
+/* Section - animacije */
+
 @keyframes closeSection {
   0% {
     visibility: "visible";
@@ -122,5 +126,25 @@
     transform: translateY(0);
     opacity: 1;
     pointer-events: initial;
+  }
+}
+
+/* Contact - animacije */
+
+@keyframes radioButton {
+  0% {
+    transform: scale(0);
+  }
+
+  33% {
+    transform: scale(1.18);
+  }
+
+  66% {
+    transform: scale(0.82);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

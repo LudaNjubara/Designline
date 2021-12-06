@@ -1,0 +1,51 @@
+/* Contact - Responzivnost forme i gornjeg paddinga + Hero - responzivnost bg elemenata */
+
+@media screen and (max-height: 800px) {
+  #hero .hero-inner-container #hero-inner-top-left-bg {
+    max-width: 550px !important;
+  }
+
+  #hero .hero-inner-container #hero-inner-bottom-right-bg {
+    max-width: 550px !important;
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: clamp(110px, 25vmax, 300px) !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 630px) {
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: clamp(300px, 45vmax, 400px) !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 500px) {
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: clamp(380px, 40vmax, 420px) !important;
+      }
+    }
+  }
+}
+
+/* Hero - responzivnost bg elemenata */
+
+@media screen and (max-height: 500px) and (max-width: 800px) {
+  #hero .hero-inner-container #hero-inner-top-left-bg {
+    max-width: 250px !important;
+  }
+
+  #hero .hero-inner-container #hero-inner-bottom-right-bg {
+    max-width: 250px !important;
+  }
+}
