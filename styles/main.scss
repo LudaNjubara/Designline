@@ -103,6 +103,10 @@
         height: 100%;
         overflow-y: scroll;
 
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
         form {
           position: relative;
           display: flex;

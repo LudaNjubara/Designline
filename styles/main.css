@@ -499,6 +499,10 @@
   overflow-y: scroll;
 }
 
+#hero .hero-inner-container #contact .contact-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
 #hero .hero-inner-container #contact .contact-wrapper form {
   position: relative;
   display: -webkit-box;
