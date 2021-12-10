@@ -8,6 +8,7 @@
 
   .hero-inner-container {
     max-height: 841px;
+
     #about {
       display: flex;
       align-items: center;
@@ -202,6 +203,7 @@
               .make-website-label,
               .remake-website-label {
                 display: inline-flex;
+                max-width: 400px;
                 align-items: center;
 
                 input {

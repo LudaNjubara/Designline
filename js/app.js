@@ -1,4 +1,6 @@
 /* ----------------------Functions------------------------- */
+
+/* Function to apply different forms on bg elements */
 function heroBgAnimacija(nextFirstPathID, nextSecondPathID) {
   var tween1 = KUTE.fromTo(
     "#left-universal",
@@ -21,6 +23,7 @@ function heroBgAnimacija(nextFirstPathID, nextSecondPathID) {
   ).start();
 }
 
+/* Function to apply color fill on bg elements */
 function fillAnimacija(nextColor) {
   var fillAnimation = KUTE.allTo(
     "#left-universal",
@@ -43,6 +46,7 @@ function fillAnimacija(nextColor) {
   ).start();
 }
 
+/* Function to alter between colors and forms on bg elements depending on section clicked */
 function switchCase(targetID, nextBg, nextColor) {
   switch (targetID) {
     case "home-link":
@@ -67,11 +71,13 @@ function switchCase(targetID, nextBg, nextColor) {
   }
 }
 
+/* Function to change to selected section and remove tabIndex from unactive ones */
 function changeSection(sections, activeSection, index) {
   const projectsLinks = document.querySelectorAll(".slika a");
   const contactFormInputs = document.querySelectorAll("#contact .contact-wrapper form input");
   const contactFormTextarea = document.querySelector("#contact .contact-wrapper form textarea");
 
+  /* Removing tab indecies from all unactive sections */
   if (sections[activeSection].id == "projects") {
     projectsLinks.forEach((link) => {
       link.tabIndex = "-1";
@@ -82,13 +88,17 @@ function changeSection(sections, activeSection, index) {
     });
     contactFormTextarea.tabIndex = "-1";
   }
+  /* Removing tab indecies from all unactive sections - end */
 
+  /* Changing sections */
   sections[activeSection].classList.remove("newSection");
   sections[activeSection].classList.add("closeSection");
 
   sections[index].classList.remove("closeSection");
   sections[index].classList.add("newSection");
+  /* Changing sections - end*/
 
+  /* Adding tab indecies to active sections */
   if (sections[index].id == "projects") {
     projectsLinks.forEach((link) => {
       link.tabIndex = "0";
@@ -99,6 +109,7 @@ function changeSection(sections, activeSection, index) {
     });
     contactFormTextarea.tabIndex = "0";
   }
+  /* Adding tab indecies to active sections - end*/
 }
 
 /* ------------------Main-------------------- */
@@ -111,24 +122,43 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactFormInputs = document.querySelectorAll("#contact .contact-wrapper form input");
   const contactFormTextarea = document.querySelector("#contact .contact-wrapper form textarea");
 
+  /* Color variables */
+  const varHomeColor = "#1b042b";
+  const varAboutColor = "#ffbe30";
+  const varProjectsColor = "#18094d";
+  const varContactColor = "#911d40";
+
+  const varHomeColorInner = "#12031d";
+  const varAboutColorInner = "#ffb412";
+  const varProjectsColorInner = "#120738";
+  const varContactColorInner = "#910f36";
+
+  const varHomeColorHero = "#0e0214";
+  const varAboutColorHero = "#ffae00";
+  const varProjectsColorHero = "#0b0424";
+  const varContactColorHero = "#91002c";
+  /* Color variables - end */
+
+  /* Colors dictionary */
   const nextColor = {
-    homeColor: "#1b042b",
-    aboutColor: "#ffbe30",
-    projectsColor: "#18094d",
-    contactColor: "#911d40",
+    homeColor: varHomeColor,
+    aboutColor: varAboutColor,
+    projectsColor: varProjectsColor,
+    contactColor: varContactColor,
   };
   const nextInnerColor = {
-    homeColor: "#12031d",
-    aboutColor: "#ffb412",
-    projectsColor: "#120738",
-    contactColor: "#910f36",
+    homeColor: varHomeColorInner,
+    aboutColor: varAboutColorInner,
+    projectsColor: varProjectsColorInner,
+    contactColor: varContactColorInner,
   };
   const nextHeroColor = {
-    homeColor: "#0e0214",
-    aboutColor: "#ffae00",
-    projectsColor: "#0b0424",
-    contactColor: "#91002c",
+    homeColor: varHomeColorHero,
+    aboutColor: varAboutColorHero,
+    projectsColor: varProjectsColorHero,
+    contactColor: varContactColorHero,
   };
+  /* Colors dictionary - end */
 
   let nextBg = [];
   let activeLinkID;
