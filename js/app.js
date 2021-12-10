@@ -124,17 +124,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Color variables */
   const varHomeColor = "#1b042b";
-  const varAboutColor = "#ffbe30";
+  const varAboutColor = "#113e3a";
   const varProjectsColor = "#18094d";
   const varContactColor = "#911d40";
 
   const varHomeColorInner = "#12031d";
-  const varAboutColorInner = "#ffb412";
+  const varAboutColorInner = "#0C2C29";
   const varProjectsColorInner = "#120738";
   const varContactColorInner = "#910f36";
 
   const varHomeColorHero = "#0e0214";
-  const varAboutColorHero = "#ffae00";
+  const varAboutColorHero = "#040f0e";
   const varProjectsColorHero = "#0b0424";
   const varContactColorHero = "#91002c";
   /* Color variables - end */

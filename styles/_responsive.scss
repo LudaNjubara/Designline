@@ -26,6 +26,10 @@
       }
     }
   }
+
+  #home .home-wrapper {
+    padding-top: 80px;
+  }
 }
 
 @media screen and (max-height: 500px) {
@@ -36,11 +40,15 @@
       }
     }
   }
+
+  #home .home-wrapper {
+    padding-top: 80px;
+  }
 }
 
 /* Hero - responzivnost bg elemenata */
 
-@media screen and (max-height: 500px) and (max-width: 800px) {
+@media screen and (max-height: 600px) and (max-width: 800px) {
   #hero .hero-inner-container #hero-inner-top-left-bg {
     max-width: 250px !important;
   }
