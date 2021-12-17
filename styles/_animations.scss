@@ -148,3 +148,20 @@
     transform: scale(1);
   }
 }
+
+/* Navigacija - animacije ikona */
+
+@keyframes navIconAnimate {
+  0% {
+    transform: translateY(0);
+  }
+  33% {
+    transform: translateY(4px);
+  }
+  66% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

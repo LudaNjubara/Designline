@@ -41,6 +41,112 @@
   }
 }
 
+/* Mobilna verzija */
+@media screen and (max-width: 1000px) {
+  #header .logo {
+    font-size: 1.1rem !important;
+  }
+  #header .logo img {
+    width: 40px !important;
+  }
+  #header .nav .nav-list .nav-item + .nav-item {
+    margin-left: 25px !important;
+  }
+  #header .nav .nav-list .nav-item .nav-link {
+    font-size: 1rem !important;
+    padding: 3px 5px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #hero {
+    padding: 30px !important;
+  }
+  #hero .hero-inner-container {
+    top: -30px;
+    height: calc(100% - 60px) !important;
+  }
+  #hero .hero-inner-container #header {
+    padding: 30px 30px 0 30px !important;
+  }
+  #hero .hero-inner-container #header .nav {
+    position: fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100% !important;
+    padding: 7px 20px;
+    background: #12031d;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  #hero .hero-inner-container #header .nav .nav-list {
+    -ms-flex-pack: distribute !important;
+        justify-content: space-around !important;
+  }
+  #hero .hero-inner-container #header .nav .nav-list .nav-item {
+    margin: 0 !important;
+  }
+  #hero .hero-inner-container #header .nav .nav-list .nav-item .nav-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-transform: initial;
+    font-size: 0.9rem !important;
+    text-align: center;
+  }
+  #hero .hero-inner-container #header .nav .nav-list .nav-item .nav-link .nav-icon {
+    display: initial;
+    margin-bottom: 2px;
+    position: relative;
+    pointer-events: none !important;
+  }
+  #hero .hero-inner-container #header .nav .nav-list .nav-item .nav-link .nav-icon img {
+    width: 20px;
+    -webkit-filter: invert(21%) sepia(34%) saturate(6395%) hue-rotate(265deg) brightness(82%) contrast(113%);
+            filter: invert(21%) sepia(34%) saturate(6395%) hue-rotate(265deg) brightness(82%) contrast(113%);
+  }
+  #hero .hero-inner-container #header .nav .nav-list .nav-item .nav-link::before, #hero .hero-inner-container #header .nav .nav-list .nav-item .nav-link::after {
+    content: "";
+    all: unset;
+    display: none !important;
+  }
+  #hero .hero-inner-container #header .nav .nav-list .nav-item .nav-link.active .nav-icon {
+    -webkit-animation: navIconAnimate 0.3s ease-in-out forwards;
+            animation: navIconAnimate 0.3s ease-in-out forwards;
+  }
+  #hero .hero-inner-container #home,
+  #hero .hero-inner-container #about,
+  #hero .hero-inner-container #projects,
+  #hero .hero-inner-container #contact {
+    padding: 20px !important;
+  }
+}
+
+@media screen and (max-width: 512px) {
+  #hero {
+    padding: 15px !important;
+  }
+  #hero .hero-inner-container {
+    top: -30px;
+    height: calc(100% - 60px) !important;
+  }
+  #hero .hero-inner-container #header {
+    padding: 20px 20px 0 20px !important;
+  }
+  #hero .hero-inner-container #header .nav .nav-list {
+    -webkit-box-pack: justify !important;
+        -ms-flex-pack: justify !important;
+            justify-content: space-between !important;
+  }
+}
+
 /* Home - animacije */
 @-webkit-keyframes kvadratKapaAnimacija {
   from {
@@ -370,6 +476,44 @@
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+
+/* Navigacija - animacije ikona */
+@-webkit-keyframes navIconAnimate {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  33% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  66% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes navIconAnimate {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  33% {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  66% {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 

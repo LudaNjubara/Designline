@@ -1,6 +1,6 @@
 /* ----------------------Functions------------------------- */
 
-/* Function to apply different forms on bg elements */
+/* Function to apply different forms of bg elements */
 function heroBgAnimacija(nextFirstPathID, nextSecondPathID) {
   var tween1 = KUTE.fromTo(
     "#left-universal",
@@ -46,7 +46,7 @@ function fillAnimacija(nextColor) {
   ).start();
 }
 
-/* Function to alter between colors and forms on bg elements depending on section clicked */
+/* Function to alter between colors and forms of bg elements depending on section clicked */
 function switchCase(targetID, nextBg, nextColor) {
   switch (targetID) {
     case "home-link":

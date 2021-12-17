@@ -57,3 +57,129 @@
     max-width: 250px !important;
   }
 }
+
+/* Mobilna verzija */
+
+@media screen and (max-width: 1000px) {
+  #header {
+    .logo {
+      font-size: 1.1rem !important;
+
+      img {
+        width: 40px !important;
+      }
+    }
+
+    .nav {
+      .nav-list {
+        .nav-item + .nav-item {
+          margin-left: 25px !important;
+        }
+
+        .nav-item {
+          .nav-link {
+            font-size: 1rem !important;
+            padding: 3px 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #hero {
+    padding: $md-padding !important;
+
+    .hero-inner-container {
+      top: -30px;
+      height: calc(100% - 60px) !important;
+
+      #header {
+        padding: $md-padding $md-padding 0 $md-padding !important;
+
+        .nav {
+          position: fixed !important;
+          bottom: 0;
+          left: 0;
+          width: 100% !important;
+          padding: 7px $sm-padding;
+          background: #12031d;
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+
+          .nav-list {
+            justify-content: space-around !important;
+
+            .nav-item {
+              margin: 0 !important;
+
+              .nav-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-transform: initial;
+                font-size: 0.9rem !important;
+                text-align: center;
+
+                .nav-icon {
+                  display: initial;
+                  margin-bottom: 2px;
+                  position: relative;
+                  pointer-events: none !important;
+
+                  img {
+                    width: 20px;
+                    filter: invert(21%) sepia(34%) saturate(6395%) hue-rotate(265deg) brightness(82%)
+                      contrast(113%);
+                  }
+                }
+
+                &::before,
+                &::after {
+                  content: "";
+                  all: unset;
+                  display: none !important;
+                }
+              }
+
+              .nav-link.active {
+                .nav-icon {
+                  animation: navIconAnimate 0.3s ease-in-out forwards;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      #home,
+      #about,
+      #projects,
+      #contact {
+        padding: $sm-padding !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 512px) {
+  #hero {
+    padding: 15px !important;
+
+    .hero-inner-container {
+      top: -30px;
+      height: calc(100% - 60px) !important;
+
+      #header {
+        padding: $sm-padding $sm-padding 0 $sm-padding !important;
+
+        .nav {
+          .nav-list {
+            justify-content: space-between !important;
+          }
+        }
+      }
+    }
+  }
+}
