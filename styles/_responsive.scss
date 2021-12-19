@@ -1,65 +1,4 @@
-/* Contact - Responzivnost forme i gornjeg paddinga + Hero - responzivnost bg elemenata */
-
-@media screen and (max-height: 800px) {
-  #hero .hero-inner-container #hero-inner-top-left-bg {
-    max-width: 550px !important;
-  }
-
-  #hero .hero-inner-container #hero-inner-bottom-right-bg {
-    max-width: 550px !important;
-  }
-
-  #contact {
-    .contact-wrapper {
-      form {
-        padding-top: clamp(110px, 25vmax, 300px) !important;
-      }
-    }
-  }
-}
-
-@media screen and (max-height: 630px) {
-  #contact {
-    .contact-wrapper {
-      form {
-        padding-top: clamp(300px, 45vmax, 400px) !important;
-      }
-    }
-  }
-
-  #home .home-wrapper {
-    padding-top: 80px;
-  }
-}
-
-@media screen and (max-height: 500px) {
-  #contact {
-    .contact-wrapper {
-      form {
-        padding-top: clamp(380px, 40vmax, 420px) !important;
-      }
-    }
-  }
-
-  #home .home-wrapper {
-    padding-top: 80px;
-  }
-}
-
-/* Hero - responzivnost bg elemenata */
-
-@media screen and (max-height: 600px) and (max-width: 800px) {
-  #hero .hero-inner-container #hero-inner-top-left-bg {
-    max-width: 250px !important;
-  }
-
-  #hero .hero-inner-container #hero-inner-bottom-right-bg {
-    max-width: 250px !important;
-  }
-}
-
-/* Mobilna verzija */
-
+/* Podešavanje navigacije za tablete i postavljenje Contact forme u jedan stupac*/
 @media screen and (max-width: 1000px) {
   #header {
     .logo {
@@ -85,8 +24,26 @@
       }
     }
   }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        .main-contact-info {
+          .main-contact-info-input-wrapper {
+            justify-content: unset !important;
+            flex-direction: column !important;
+
+            .main-contact-input-container + .main-contact-input-container {
+              margin-top: 40px !important;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
+/* Mijenjanje pozicije i izgleda navigaacije za mobitele i male tablete te smanjenje paddinga na Hero, Header i sectionima */
 @media screen and (max-width: 768px) {
   #hero {
     padding: $md-padding !important;
@@ -163,6 +120,7 @@
   }
 }
 
+/* Kalkulacija visine .hero-inner-containera zbog navigacije ispod njega te smanjenje Hero i Header paddinga */
 @media screen and (max-width: 512px) {
   #hero {
     padding: 15px !important;
@@ -183,3 +141,349 @@
     }
   }
 }
+
+/* Responzivnost Home Sectiona, Contact forme i Hero bg elemenata */
+@media screen and (min-width: 250px) and (max-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        width: 100%;
+      }
+    }
+  }
+
+  #home {
+    .home-wrapper {
+      flex-direction: column !important;
+      padding-top: 80px !important;
+
+      .inner-left {
+        padding: 0 !important;
+        padding-bottom: 20px !important;
+
+        .hero-title {
+          font-size: 1.9rem !important;
+        }
+
+        .hero-desc {
+          width: 100% !important;
+        }
+      }
+
+      .inner-right {
+        max-height: 300px !important;
+      }
+    }
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: 480px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (max-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        max-width: 280px;
+      }
+    }
+  }
+
+  #home {
+    .home-wrapper {
+      .inner-left {
+        .hero-title {
+          font-size: 2.1rem !important;
+        }
+      }
+
+      .inner-right {
+        max-height: 195px !important;
+      }
+    }
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: 500px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (max-height: 768px) {
+  #home {
+    .home-wrapper {
+      .inner-left {
+        .hero-title {
+          font-size: 2.2rem !important;
+        }
+      }
+
+      .inner-right {
+        max-height: 250px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 450px) and (max-height: 768px) {
+  #home {
+    .home-wrapper {
+      padding-top: 100px !important;
+
+      .inner-left {
+        .hero-desc {
+          width: 80% !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 600px) and (max-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        max-width: 380px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-height: 768px) {
+  #home {
+    .home-wrapper {
+      flex-direction: initial !important;
+      padding-top: 80px !important;
+
+      .inner-left {
+        padding-right: 30px !important;
+        padding-bottom: unset !important;
+
+        .hero-title {
+          font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
+          width: 100% !important;
+        }
+
+        .hero-desc {
+          font-size: 1.2rem;
+          width: 80% !important;
+        }
+      }
+
+      .inner-right {
+        max-height: unset !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        max-width: 520px;
+      }
+    }
+  }
+
+  #home {
+    .home-wrapper {
+      .inner-left {
+        .hero-title {
+          width: 85% !important;
+        }
+      }
+
+      .inner-right {
+        max-height: unset !important;
+      }
+    }
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: 350px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 250px) and (min-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        width: 100%;
+      }
+    }
+  }
+
+  #home {
+    .home-wrapper {
+      flex-direction: column !important;
+      padding-top: 120px !important;
+
+      .inner-left {
+        padding: 0 !important;
+        padding-bottom: 20px !important;
+
+        .hero-title {
+          font-size: 1.9rem !important;
+        }
+
+        .hero-desc {
+          width: 100% !important;
+        }
+      }
+
+      .inner-right {
+        max-height: 300px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 300px) and (min-height: 768px) {
+  #home {
+    .home-wrapper {
+      .inner-left {
+        .hero-title {
+          font-size: 2.1rem !important;
+        }
+      }
+
+      .inner-right {
+        max-height: 220px !important;
+      }
+    }
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: 320px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 400px) and (min-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        max-width: 400px;
+      }
+    }
+  }
+
+  #home {
+    .home-wrapper {
+      padding-top: 100px !important;
+
+      .inner-left {
+        .hero-title {
+          font-size: 2.1rem !important;
+        }
+      }
+
+      .inner-right {
+        max-height: 300px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (min-height: 768px) {
+  #home {
+    .home-wrapper {
+      flex-direction: initial !important;
+      padding-top: 80px !important;
+
+      .inner-left {
+        padding-bottom: unset !important;
+        padding-right: 30px !important;
+
+        .hero-title {
+          font-size: 2.5rem !important;
+        }
+
+        .hero-desc {
+          font-size: 1.1rem !important;
+        }
+      }
+
+      .inner-right {
+        max-height: unset !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 768px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        max-width: 600px;
+      }
+    }
+  }
+
+  #home {
+    .home-wrapper {
+      .inner-left {
+        .hero-title {
+          font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+        }
+
+        .hero-desc {
+          font-size: 1.25rem;
+          width: 80% !important;
+        }
+      }
+    }
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: 200px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1000px) and (min-height: 841px) {
+  #hero {
+    .hero-inner-container {
+      #hero-inner-top-left-bg,
+      #hero-inner-bottom-right-bg {
+        max-width: 650px;
+      }
+    }
+  }
+
+  #contact {
+    .contact-wrapper {
+      form {
+        padding-top: 100px !important;
+      }
+    }
+  }
+}
+
+/* Responzivnost Contact forme i Hero bg elemenata - kraj*/
