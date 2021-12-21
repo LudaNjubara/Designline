@@ -121,6 +121,18 @@
   }
 }
 
+@media screen and (max-width: 310px) {
+  #header {
+    padding: 20px 20px 0 20px !important;
+  }
+  #header .nav .nav-list .nav-item .nav-link .nav-icon img {
+    width: 30px;
+  }
+  #header .nav .nav-list .nav-item .nav-link .nav-link-text {
+    display: none;
+  }
+}
+
 /* Responzivnost Home Sectiona, Contact forme i Hero bg elemenata */
 @media screen and (min-width: 250px) and (max-height: 768px) {
   #hero .hero-inner-container #hero-inner-top-left-bg,
@@ -154,7 +166,11 @@
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
     height: 130px !important;
-    -webkit-box-reflect: unset !important;
+  }
+  @supports (-webkit-box-reflect: unset) {
+    #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
+      -webkit-box-reflect: unset !important;
+    }
   }
   #contact .contact-wrapper form {
     padding-top: 480px !important;
@@ -193,7 +209,11 @@
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
     height: 130px !important;
-    -webkit-box-reflect: unset !important;
+  }
+  @supports (-webkit-box-reflect: unset) {
+    #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
+      -webkit-box-reflect: unset !important;
+    }
   }
 }
 
@@ -328,7 +348,17 @@
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
     height: 220px !important;
-    -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006) !important;
+  }
+  @supports (-webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006)) {
+    #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
+      -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006) !important;
+    }
+  }
+  @supports not (-webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006)) {
+    #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
+      -webkit-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important;
+              box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important;
+    }
   }
 }
 
@@ -355,7 +385,17 @@
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
     height: 240px !important;
-    -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006) !important;
+  }
+  @supports (-webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006)) {
+    #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
+      -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006) !important;
+    }
+  }
+  @supports not (-webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006)) {
+    #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
+      -webkit-box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important;
+              box-shadow: 0 15px 15px rgba(0, 0, 0, 0.4) !important;
+    }
   }
 }
 
@@ -787,6 +827,7 @@
   color: white;
   gap: 40px;
   overflow-y: scroll;
+  scrollbar-width: none !important;
 }
 
 #hero .hero-inner-container #about .about-wrapper::-webkit-scrollbar {
@@ -977,8 +1018,7 @@
   height: 290px;
   border-radius: 15px;
   overflow: hidden;
-  -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006);
-  pointer-events: initial;
+  pointer-events: none;
   will-change: transform;
 }
 
@@ -998,6 +1038,7 @@
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+  scrollbar-width: none !important;
 }
 
 #hero .hero-inner-container #contact .contact-wrapper::-webkit-scrollbar {
@@ -1019,8 +1060,8 @@
   width: 100%;
   height: 100%;
   padding-top: clamp(90px, 15vh, 110px);
-  /*   padding-bottom: 20px; */
   color: white;
+  scrollbar-width: none !important;
 }
 
 #hero .hero-inner-container #contact .contact-wrapper form::-webkit-scrollbar {

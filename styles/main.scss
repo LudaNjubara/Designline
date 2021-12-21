@@ -24,6 +24,7 @@
         color: white;
         gap: 40px;
         overflow-y: scroll;
+        scrollbar-width: none !important;
 
         &::-webkit-scrollbar {
           display: none;
@@ -129,8 +130,7 @@
               height: 290px;
               border-radius: 15px;
               overflow: hidden;
-              -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006);
-              pointer-events: initial;
+              pointer-events: none;
               will-change: transform;
 
               a {
@@ -220,6 +220,7 @@
         width: 100%;
         height: 100%;
         overflow-y: scroll;
+        scrollbar-width: none !important;
 
         &::-webkit-scrollbar {
           display: none;
@@ -233,8 +234,8 @@
           width: 100%;
           height: 100%;
           padding-top: clamp(90px, 15vh, 110px);
-          /*   padding-bottom: 20px; */
           color: white;
+          scrollbar-width: none !important;
 
           &::-webkit-scrollbar {
             display: none;

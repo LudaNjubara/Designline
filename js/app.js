@@ -71,16 +71,17 @@ function switchCase(targetID, nextBg, nextColor) {
   }
 }
 
-/* Function to change to selected section and remove tabIndex from unactive ones */
+/* Function to change to selected section and remove tabIndex from inactive ones */
 function changeSection(sections, activeSection, index) {
-  const projectsLinks = document.querySelectorAll(".slika a");
+  const projectsLinks = document.querySelectorAll(".swiper-slide a");
   const contactFormInputs = document.querySelectorAll("#contact .contact-wrapper form input");
   const contactFormTextarea = document.querySelector("#contact .contact-wrapper form textarea");
 
-  /* Removing tab indecies from all unactive sections */
+  /* Removing tab indecies from all inactive sections */
   if (sections[activeSection].id == "projects") {
     projectsLinks.forEach((link) => {
       link.tabIndex = "-1";
+      link.style.pointerEvents = "none";
     });
   } else if (sections[activeSection].id == "contact") {
     contactFormInputs.forEach((input) => {
@@ -88,7 +89,7 @@ function changeSection(sections, activeSection, index) {
     });
     contactFormTextarea.tabIndex = "-1";
   }
-  /* Removing tab indecies from all unactive sections - end */
+  /* Removing tab indecies from all inactive sections - end */
 
   /* Changing sections */
   sections[activeSection].classList.remove("newSection");
@@ -101,7 +102,7 @@ function changeSection(sections, activeSection, index) {
   /* Adding tab indecies to active sections */
   if (sections[index].id == "projects") {
     projectsLinks.forEach((link) => {
-      link.tabIndex = "0";
+      link.style.pointerEvents = "all";
     });
   } else if (sections[index].id == "contact") {
     contactFormInputs.forEach((input) => {
@@ -191,6 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Remove tab indecies from Projects and Contact sections on first page load */
   projectsLinks.forEach((link) => {
     link.tabIndex = "-1";
+    link.style.pointerEvents = "none";
   });
 
   contactFormInputs.forEach((input) => {
