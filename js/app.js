@@ -112,15 +112,39 @@ function changeSection(sections, activeSection, index) {
   /* Adding tab indecies to active sections - end*/
 }
 
+/* Function to check if User is hovering over the Swiper Slides or not */
+function checkHover() {
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
+  swiperWrapper.mouseIsOver = false;
+  swiperWrapper.onmouseover = function () {
+    this.mouseIsOver = true;
+  };
+  swiperWrapper.onmouseout = function () {
+    this.mouseIsOver = false;
+  };
+
+  return mouseIsOver;
+}
+
+/* Function to update the direction of the slides in Swiper on Projects section */
+function updateSwiper(swiperObject) {
+  if (window.innerWidth <= 768) {
+    swiperObject.changeDirection("vertical");
+  } else {
+    swiperObject.changeDirection("horizontal");
+  }
+}
+
 /* ------------------Main-------------------- */
+
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll(".nav-link");
   const hero = document.querySelector("#hero");
   const heroInnerContainer = document.querySelector(".hero-inner-container");
   const sections = document.querySelectorAll(".hero-inner-container section");
-  const projectsLinks = document.querySelectorAll(".slika a");
   const contactFormInputs = document.querySelectorAll("#contact .contact-wrapper form input");
   const contactFormTextarea = document.querySelector("#contact .contact-wrapper form textarea");
+  const projectsLinks = document.querySelectorAll(".swiper-slide a");
 
   /* Color variables */
   const varHomeColor = "#1b042b";
@@ -164,6 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let activeLinkID;
   let activeSection;
 
+  /* Remove tab indecies from Projects and Contact sections on first page load */
   projectsLinks.forEach((link) => {
     link.tabIndex = "-1";
   });
@@ -173,7 +198,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   contactFormTextarea.tabIndex = "-1";
+  /* Remove tab indecies from Projects and Contact sections on first page load - end */
 
+  /* Set to the active section on first page load (Home page) */
   for (let i = 0; i < navLinks.length; i++) {
     if (navLinks[i].classList.contains("active")) {
       activeLinkID = navLinks[i].id;
@@ -182,6 +209,69 @@ document.addEventListener("DOMContentLoaded", () => {
       nextBg = [];
     }
   }
+  /* Set to the active section on first page load (Home page) - end */
+
+  /* Initialize and set properties of swiper on Projects section */
+  const swiper = new Swiper(".swiper", {
+    enabled: false,
+    effect: "coverflow",
+    slidesPerView: "auto",
+    loopedSlides: 6,
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    mousewheel: true,
+    observer: true,
+
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 300,
+      scale: 0.95,
+      modifier: 1,
+      slideShadows: true,
+    },
+
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: checkHover,
+    },
+
+    keyboard: {
+      enabled: true,
+      onlyInViewport: false,
+      pageUpDown: true,
+    },
+
+    breakpoints: {
+      // when window width is >= 250px
+      250: {
+        spaceBetween: 10,
+      },
+      // when window width is >= 400px
+      400: {
+        spaceBetween: 20,
+      },
+      // when window width is >= 769px
+      769: {
+        spaceBetween: 30,
+      },
+      // when window width is >= 1000px
+      1000: {
+        spaceBetween: 40,
+      },
+    },
+  });
+  /* Initialize and set properties of swiper on Projects section - end */
+
+  /* Update the direction of slides in Swiper on page load depending on screen width */
+  updateSwiper(swiper);
+
+  window.addEventListener("resize", function () {
+    updateSwiper(swiper);
+  });
+  /* Update the direction of slides in Swiper on page load depending on screen width - end */
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
@@ -192,27 +282,32 @@ document.addEventListener("DOMContentLoaded", () => {
             navLinks[j].classList.remove("active");
             activeSection = j;
 
+            // Check which link was clicked
             switch (e.target.id) {
               case "home-link":
                 changeSection(sections, activeSection, 0);
                 hero.style.backgroundColor = "";
                 heroInnerContainer.style.backgroundColor = nextInnerColor.homeColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.homeColor}, ${nextInnerColor.homeColor})`;
+                swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
               case "about-link":
                 changeSection(sections, activeSection, 1);
                 heroInnerContainer.style.backgroundColor = nextInnerColor.aboutColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.aboutColor}, ${nextInnerColor.aboutColor})`;
+                swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
               case "projects-link":
                 changeSection(sections, activeSection, 2);
                 heroInnerContainer.style.backgroundColor = nextInnerColor.projectsColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.projectsColor}, ${nextInnerColor.projectsColor})`;
+                swiper.enable(); // enable moving of swiper slides when Projects section becomes active
                 break;
               case "contact-link":
                 changeSection(sections, activeSection, 3);
                 heroInnerContainer.style.backgroundColor = nextInnerColor.contactColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.contactColor}, ${nextInnerColor.contactColor})`;
+                swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
 
               default:
@@ -227,5 +322,12 @@ document.addEventListener("DOMContentLoaded", () => {
         nextBg = [];
       }
     });
+  });
+
+  // disable tab key on Swiper slides
+  document.querySelector(".swiper *").addEventListener("keydown", function (e) {
+    if (e.keyCode == 9) {
+      return;
+    }
   });
 });

@@ -116,6 +116,33 @@
       justify-content: center;
 
       .projects-wrapper {
+        .projects-container-2 {
+          .swiper {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 100px;
+            pointer-events: none;
+
+            .swiper-slide {
+              max-width: 550px;
+              width: 100%;
+              height: 290px;
+              border-radius: 15px;
+              overflow: hidden;
+              -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006);
+              pointer-events: initial;
+              will-change: transform;
+
+              a {
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+            }
+          }
+        }
+
         .projects-container {
           padding: $lg-padding 0;
           margin: 0 auto;
