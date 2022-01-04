@@ -167,7 +167,7 @@
     padding: 70px 0 70px 0 !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
-    height: 130px !important;
+    height: 120px !important;
   }
   @supports (-webkit-box-reflect: unset) {
     #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
@@ -231,12 +231,12 @@
     max-height: 195px !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper {
-    max-height: 385px !important;
+    max-height: 280px !important;
     padding: 80px 0 80px 0 !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
-    height: 150px !important;
-    max-width: 350px !important;
+    height: 120px !important;
+    max-width: 240px !important;
   }
   #contact .contact-wrapper form {
     padding-top: 500px !important;
@@ -271,11 +271,11 @@
     max-height: 250px !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper {
-    max-height: 470px !important;
+    max-height: 400px !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
-    height: 180px !important;
-    max-width: 400px !important;
+    height: 150px !important;
+    max-width: 350px !important;
   }
 }
 
@@ -310,11 +310,11 @@
     width: 80% !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper {
-    max-height: 510px !important;
+    max-height: 420px !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
-    height: 200px !important;
-    max-width: 450px !important;
+    height: 160px !important;
+    max-width: 360px !important;
   }
 }
 
@@ -349,7 +349,7 @@
     max-height: unset !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
-    height: 220px !important;
+    height: 195px !important;
   }
   @supports (-webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006)) {
     #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
@@ -413,7 +413,8 @@
     max-height: unset !important;
   }
   #projects .projects-wrapper .projects-container-2 .swiper .swiper-slide {
-    height: 240px !important;
+    height: 205px !important;
+    max-width: 380px !important;
   }
   #contact .contact-wrapper form {
     padding-top: 350px !important;
@@ -859,6 +860,22 @@
   line-height: 1.33;
 }
 
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 #hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -867,24 +884,60 @@
       -ms-flex-align: stretch;
           align-items: stretch;
   gap: 15px;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   margin-top: 10px;
 }
 
 #hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li {
+  position: relative;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   font-size: 1.1rem;
-  max-width: 210px;
+  min-width: 240px;
+  min-height: 140px;
   padding: 15px;
   border-radius: 7px;
-  background-color: #ffffff33;
-  color: #ffffffb3;
+  color: #ffffff;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
 }
 
-#hero .hero-inner-container #about .about-wrapper .about-summary-info {
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li .dark-div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li p {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  line-height: 1;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li:nth-child(1) {
+  background-image: url("../images/O_nama/creativity.webp");
+}
+
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li:nth-child(2) {
+  background-image: url("../images/O_nama/profesionalism.webp");
+}
+
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li:nth-child(3) {
+  background-image: url("../images/O_nama/meeting.webp");
+}
+
+#hero .hero-inner-container #about .about-wrapper .about-main-content .about-features .about-features-list li:nth-child(4) {
+  background-image: url("../images/O_nama/learning.webp");
+}
+
+#hero .hero-inner-container .about-summary-info {
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
   display: -webkit-box;
@@ -901,13 +954,13 @@
   padding-left: 25px;
 }
 
-#hero .hero-inner-container #about .about-wrapper .about-summary-info .about-summary-info-article .about-summary-info-title {
+#hero .hero-inner-container .about-summary-info .about-summary-info-article .about-summary-info-title {
   font-size: clamp(1.9rem, 7vw, 2.2rem);
   font-weight: 300;
   padding-bottom: 10px;
 }
 
-#hero .hero-inner-container #about .about-wrapper .about-summary-info .used-technologies .technology-list {
+#hero .hero-inner-container .about-summary-info .used-technologies .technology-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -916,7 +969,7 @@
   gap: 5px;
 }
 
-#hero .hero-inner-container #about .about-wrapper .about-summary-info .used-technologies .technology-list .technology {
+#hero .hero-inner-container .about-summary-info .used-technologies .technology-list .technology {
   background-color: #ffffff80;
   color: #0c2c29;
   border-radius: 20px;

@@ -211,7 +211,7 @@
           padding: 70px 0 70px 0 !important;
 
           .swiper-slide {
-            height: 130px !important;
+            height: 120px !important;
 
             @supports (-webkit-box-reflect: unset) {
               -webkit-box-reflect: unset !important;
@@ -314,12 +314,12 @@
     .projects-wrapper {
       .projects-container-2 {
         .swiper {
-          max-height: 385px !important;
+          max-height: 280px !important;
           padding: 80px 0 80px 0 !important;
 
           .swiper-slide {
-            height: 150px !important;
-            max-width: 350px !important;
+            height: 120px !important;
+            max-width: 240px !important;
           }
         }
       }
@@ -394,11 +394,11 @@
     .projects-wrapper {
       .projects-container-2 {
         .swiper {
-          max-height: 470px !important;
+          max-height: 400px !important;
 
           .swiper-slide {
-            height: 180px !important;
-            max-width: 400px !important;
+            height: 150px !important;
+            max-width: 350px !important;
           }
         }
       }
@@ -465,11 +465,11 @@
     .projects-wrapper {
       .projects-container-2 {
         .swiper {
-          max-height: 510px !important;
+          max-height: 420px !important;
 
           .swiper-slide {
-            height: 200px !important;
-            max-width: 450px !important;
+            height: 160px !important;
+            max-width: 360px !important;
           }
         }
       }
@@ -520,7 +520,7 @@
       .projects-container-2 {
         .swiper {
           .swiper-slide {
-            height: 220px !important;
+            height: 195px !important;
 
             @supports (-webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006)) {
               -webkit-box-reflect: below 1px linear-gradient(transparent 66%, #0006) !important;
@@ -611,7 +611,8 @@
       .projects-container-2 {
         .swiper {
           .swiper-slide {
-            height: 240px !important;
+            height: 205px !important;
+            max-width: 380px !important;
           }
         }
       }
