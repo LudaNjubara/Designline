@@ -51,6 +51,8 @@
     background: #12031d;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8), 0 10px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.8), 0 10px 15px rgba(0, 0, 0, 0.3);
   }
   #hero .hero-inner-container #header .nav .nav-list {
     -ms-flex-pack: distribute !important;
@@ -452,65 +454,65 @@
 /* Responzivnost Contact forme i Hero bg elemenata - kraj*/
 /* Home - animacije */
 @-webkit-keyframes kvadratKapaAnimacija {
-  from {
+  0% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
   }
-  to {
+  100% {
     -webkit-transform: scale(0.99) translateY(20px);
             transform: scale(0.99) translateY(20px);
   }
 }
 @keyframes kvadratKapaAnimacija {
-  from {
+  0% {
     -webkit-transform: scale(1) translateY(0);
             transform: scale(1) translateY(0);
   }
-  to {
+  100% {
     -webkit-transform: scale(0.99) translateY(20px);
             transform: scale(0.99) translateY(20px);
   }
 }
 
 @-webkit-keyframes kvadratAnimacija {
-  from {
+  0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  to {
+  100% {
     -webkit-transform: translateY(5px);
             transform: translateY(5px);
   }
 }
 
 @keyframes kvadratAnimacija {
-  from {
+  0% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
   }
-  to {
+  100% {
     -webkit-transform: translateY(5px);
             transform: translateY(5px);
   }
 }
 
 @-webkit-keyframes sjenaAnimacija {
-  from {
+  0% {
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
   }
-  to {
+  100% {
     -webkit-transform: translateY(-15px);
             transform: translateY(-15px);
   }
 }
 
 @keyframes sjenaAnimacija {
-  from {
+  0% {
     -webkit-transform: translateY(-20px);
             transform: translateY(-20px);
   }
-  to {
+  100% {
     -webkit-transform: translateY(-15px);
             transform: translateY(-15px);
   }
@@ -547,30 +549,30 @@
 }
 
 @-webkit-keyframes tockaAnimacija {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 
 @keyframes tockaAnimacija {
-  from {
+  0% {
     opacity: 1;
   }
-  to {
+  100% {
     opacity: 0;
   }
 }
 
 @-webkit-keyframes heroTekstAnimacija {
-  from {
+  0% {
     opacity: 0;
     -webkit-transform: translateY(25px);
             transform: translateY(25px);
   }
-  to {
+  100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -578,12 +580,12 @@
 }
 
 @keyframes heroTekstAnimacija {
-  from {
+  0% {
     opacity: 0;
     -webkit-transform: translateY(25px);
             transform: translateY(25px);
   }
-  to {
+  100% {
     opacity: 1;
     -webkit-transform: translateY(0);
             transform: translateY(0);
@@ -1208,7 +1210,7 @@
 #hero .hero-inner-container #contact .contact-wrapper form .additional-contact-info .additional-contact-info-input-wrapper .remake-website-label .custom-radio-button {
   margin-right: 10px;
   width: 17px;
-  aspect-ratio: 1;
+  height: 17px;
   border: 2px solid #ffffff33;
   padding: 3px;
   border-radius: 50%;

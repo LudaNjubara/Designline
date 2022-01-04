@@ -139,6 +139,8 @@ function updateSwiper(swiperObject) {
 /* ------------------Main-------------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
+  const nav = document.querySelector(".nav");
+  const navIcons = [...document.querySelectorAll(".nav-icon img")];
   const navLinks = document.querySelectorAll(".nav-link");
   const hero = document.querySelector("#hero");
   const heroInnerContainer = document.querySelector(".hero-inner-container");
@@ -291,24 +293,44 @@ document.addEventListener("DOMContentLoaded", () => {
                 hero.style.backgroundColor = "";
                 heroInnerContainer.style.backgroundColor = nextInnerColor.homeColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.homeColor}, ${nextInnerColor.homeColor})`;
+                nav.style.backgroundColor = nextInnerColor.homeColor;
+                navIcons.forEach((icon) => {
+                  icon.style.filter =
+                    "invert(21%) sepia(34%) saturate(6395%) hue-rotate(265deg) brightness(82%) contrast(113%)";
+                });
                 swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
               case "about-link":
                 changeSection(sections, activeSection, 1);
                 heroInnerContainer.style.backgroundColor = nextInnerColor.aboutColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.aboutColor}, ${nextInnerColor.aboutColor})`;
+                nav.style.backgroundColor = nextInnerColor.aboutColor;
+                navIcons.forEach((icon) => {
+                  icon.style.filter =
+                    "invert(31%) sepia(67%) saturate(511%) hue-rotate(126deg) brightness(93%) contrast(81%)";
+                });
                 swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
               case "projects-link":
                 changeSection(sections, activeSection, 2);
                 heroInnerContainer.style.backgroundColor = nextInnerColor.projectsColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.projectsColor}, ${nextInnerColor.projectsColor})`;
+                nav.style.backgroundColor = nextInnerColor.projectsColor;
+                navIcons.forEach((icon) => {
+                  icon.style.filter =
+                    "invert(14%) sepia(85%) saturate(4396%) hue-rotate(254deg) brightness(71%) contrast(112%)";
+                });
                 swiper.enable(); // enable moving of swiper slides when Projects section becomes active
                 break;
               case "contact-link":
                 changeSection(sections, activeSection, 3);
                 heroInnerContainer.style.backgroundColor = nextInnerColor.contactColor;
                 hero.style.background = `linear-gradient(to top right, ${nextHeroColor.contactColor}, ${nextInnerColor.contactColor})`;
+                nav.style.backgroundColor = nextInnerColor.contactColor;
+                navIcons.forEach((icon) => {
+                  icon.style.filter =
+                    "invert(30%) sepia(85%) saturate(3901%) hue-rotate(326deg) brightness(93%) contrast(91%)";
+                });
                 swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
 
