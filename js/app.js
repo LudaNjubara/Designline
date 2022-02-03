@@ -1,8 +1,8 @@
-/* ----------------------Functions------------------------- */
+/* ---------------------------------------------------------------------------Functions-------------------------------------------------------------------------------------- */
 
 /* Function to apply different forms of bg elements */
 function heroBgAnimacija(nextFirstPathID, nextSecondPathID) {
-  var tween1 = KUTE.fromTo(
+  let tween1 = KUTE.fromTo(
     "#left-universal",
     { path: "#left-universal" },
     { path: `#${nextFirstPathID}` },
@@ -12,7 +12,7 @@ function heroBgAnimacija(nextFirstPathID, nextSecondPathID) {
     }
   ).start();
 
-  var tween2 = KUTE.fromTo(
+  let tween2 = KUTE.fromTo(
     "#right-universal",
     { path: "#right-universal" },
     { path: `#${nextSecondPathID}` },
@@ -25,7 +25,7 @@ function heroBgAnimacija(nextFirstPathID, nextSecondPathID) {
 
 /* Function to apply color fill on bg elements */
 function fillAnimacija(nextColor) {
-  var fillAnimation = KUTE.allTo(
+  let fillAnimation = KUTE.allTo(
     "#left-universal",
     {
       attr: { fill: nextColor },
@@ -35,7 +35,7 @@ function fillAnimacija(nextColor) {
     }
   ).start();
 
-  var fillAnimation2 = KUTE.allTo(
+  let fillAnimation2 = KUTE.allTo(
     "#right-universal",
     {
       attr: { fill: nextColor },
@@ -72,10 +72,91 @@ function switchCase(targetID, nextBg, nextColor) {
 }
 
 /* Function to change to selected section and remove tabIndex from inactive ones */
-function changeSection(sections, activeSection, index) {
-  const projectsLinks = document.querySelectorAll(".swiper-slide a");
-  const contactFormInputs = document.querySelectorAll("#contact .contact-wrapper form input");
-  const contactFormTextarea = document.querySelector("#contact .contact-wrapper form textarea");
+function changeSection(
+  sections,
+  activeSection,
+  index,
+  svgAnimatedElements,
+  projectsLinks,
+  contactFormInputs,
+  contactFormTextarea,
+  hero,
+  heroInnerContainer,
+  nav,
+  navIcons,
+  nextHeroColor,
+  nextInnerColor
+) {
+  switch (index) {
+    case 0: // Home Section
+      hero.style.backgroundColor = "";
+      heroInnerContainer.style.backgroundColor = nextInnerColor.homeColor;
+      hero.style.background = `linear-gradient(to top right, ${nextHeroColor.homeColor}, ${nextInnerColor.homeColor})`;
+
+      if (window.innerWidth <= 768) nav.style.backgroundColor = nextInnerColor.homeColor;
+
+      svgAnimatedElements.forEach((element) => element.classList.add("animating"));
+      navIcons.forEach((icon) => {
+        icon.style.filter =
+          "invert(21%) sepia(34%) saturate(6395%) hue-rotate(265deg) brightness(82%) contrast(113%)";
+      });
+      break;
+
+    case 1: // About Section
+      heroInnerContainer.style.backgroundColor = nextInnerColor.aboutColor;
+      hero.style.background = `linear-gradient(to top right, ${nextHeroColor.aboutColor}, ${nextInnerColor.aboutColor})`;
+
+      if (window.innerWidth <= 768) nav.style.backgroundColor = nextInnerColor.aboutColor;
+
+      svgAnimatedElements.forEach((element) => {
+        if (element.classList.contains("animating")) element.classList.remove("animating");
+      });
+
+      navIcons.forEach(
+        (icon) =>
+          (icon.style.filter =
+            "invert(31%) sepia(67%) saturate(511%) hue-rotate(126deg) brightness(93%) contrast(81%)")
+      );
+      break;
+
+    case 2: // Projects Section
+      heroInnerContainer.style.backgroundColor = nextInnerColor.projectsColor;
+      hero.style.background = `linear-gradient(to top right, ${nextHeroColor.projectsColor}, ${nextInnerColor.projectsColor})`;
+
+      if (window.innerWidth <= 768) nav.style.backgroundColor = nextInnerColor.projectsColor;
+
+      svgAnimatedElements.forEach((element) => {
+        if (element.classList.contains("animating")) element.classList.remove("animating");
+      });
+
+      navIcons.forEach(
+        (icon) =>
+          (icon.style.filter =
+            "invert(14%) sepia(85%) saturate(4396%) hue-rotate(254deg) brightness(71%) contrast(112%)")
+      );
+
+      break;
+
+    case 3: // Contact Section
+      heroInnerContainer.style.backgroundColor = nextInnerColor.contactColor;
+      hero.style.background = `linear-gradient(to top right, ${nextHeroColor.contactColor}, ${nextInnerColor.contactColor})`;
+
+      if (window.innerWidth <= 768) nav.style.backgroundColor = nextInnerColor.contactColor;
+
+      svgAnimatedElements.forEach((element) => {
+        if (element.classList.contains("animating")) element.classList.remove("animating");
+      });
+
+      navIcons.forEach(
+        (icon) =>
+          (icon.style.filter =
+            "invert(30%) sepia(85%) saturate(3901%) hue-rotate(326deg) brightness(93%) contrast(91%)")
+      );
+      break;
+
+    default:
+      break;
+  }
 
   /* Removing tab indecies from all inactive sections */
   if (sections[activeSection].id == "projects") {
@@ -136,18 +217,28 @@ function updateSwiper(swiperObject) {
   }
 }
 
-/* ------------------Main-------------------- */
+/* ---------------------------------------------------------------------------Main-------------------------------------------------------------------------------------- */
 
-document.addEventListener("DOMContentLoaded", () => {
-  const nav = document.querySelector(".nav");
-  const navIcons = [...document.querySelectorAll(".nav-icon img")];
-  const navLinks = document.querySelectorAll(".nav-link");
+window.onload = function () {
+  // General
   const hero = document.querySelector("#hero");
   const heroInnerContainer = document.querySelector(".hero-inner-container");
   const sections = document.querySelectorAll(".hero-inner-container section");
+
+  // Navigation
+  const nav = document.querySelector(".nav");
+  const navIcons = [...document.querySelectorAll(".nav-icon img")];
+  const navLinks = document.querySelectorAll(".nav-link");
+
+  // Home
+  const svgAnimatedElements = [...document.querySelectorAll(".animating")];
+
+  // Projects
+  const projectsLinks = document.querySelectorAll(".swiper-slide a");
+
+  // Contact
   const contactFormInputs = document.querySelectorAll("#contact .contact-wrapper form input");
   const contactFormTextarea = document.querySelector("#contact .contact-wrapper form textarea");
-  const projectsLinks = document.querySelectorAll(".swiper-slide a");
 
   /* Color variables */
   const varHomeColor = "#1b042b";
@@ -203,6 +294,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   contactFormTextarea.tabIndex = "-1";
   /* Remove tab indecies from Projects and Contact sections on first page load - end */
+
+  /* Set background color of nav to homeColor */
+  if (window.innerWidth <= 768) {
+    nav.style.backgroundColor = nextInnerColor.homeColor;
+  }
+  /* Set background color of nav to homeColor - end */
 
   /* Set to the active section on first page load (Home page) */
   for (let i = 0; i < navLinks.length; i++) {
@@ -274,6 +371,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", function () {
     updateSwiper(swiper);
+
+    if (window.innerWidth >= 768) {
+      nav.style.backgroundColor = "unset";
+    }
   });
   /* Update the direction of slides in Swiper on page load depending on screen width - end */
 
@@ -289,48 +390,75 @@ document.addEventListener("DOMContentLoaded", () => {
             // Check which link was clicked
             switch (e.target.id) {
               case "home-link":
-                changeSection(sections, activeSection, 0);
-                hero.style.backgroundColor = "";
-                heroInnerContainer.style.backgroundColor = nextInnerColor.homeColor;
-                hero.style.background = `linear-gradient(to top right, ${nextHeroColor.homeColor}, ${nextInnerColor.homeColor})`;
-                nav.style.backgroundColor = nextInnerColor.homeColor;
-                navIcons.forEach((icon) => {
-                  icon.style.filter =
-                    "invert(21%) sepia(34%) saturate(6395%) hue-rotate(265deg) brightness(82%) contrast(113%)";
-                });
+                changeSection(
+                  sections,
+                  activeSection,
+                  0,
+                  svgAnimatedElements,
+                  projectsLinks,
+                  contactFormInputs,
+                  contactFormTextarea,
+                  hero,
+                  heroInnerContainer,
+                  nav,
+                  navIcons,
+                  nextHeroColor,
+                  nextInnerColor
+                );
                 swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
               case "about-link":
-                changeSection(sections, activeSection, 1);
-                heroInnerContainer.style.backgroundColor = nextInnerColor.aboutColor;
-                hero.style.background = `linear-gradient(to top right, ${nextHeroColor.aboutColor}, ${nextInnerColor.aboutColor})`;
-                nav.style.backgroundColor = nextInnerColor.aboutColor;
-                navIcons.forEach((icon) => {
-                  icon.style.filter =
-                    "invert(31%) sepia(67%) saturate(511%) hue-rotate(126deg) brightness(93%) contrast(81%)";
-                });
+                changeSection(
+                  sections,
+                  activeSection,
+                  1,
+                  svgAnimatedElements,
+                  projectsLinks,
+                  contactFormInputs,
+                  contactFormTextarea,
+                  hero,
+                  heroInnerContainer,
+                  nav,
+                  navIcons,
+                  nextHeroColor,
+                  nextInnerColor
+                );
                 swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
               case "projects-link":
-                changeSection(sections, activeSection, 2);
-                heroInnerContainer.style.backgroundColor = nextInnerColor.projectsColor;
-                hero.style.background = `linear-gradient(to top right, ${nextHeroColor.projectsColor}, ${nextInnerColor.projectsColor})`;
-                nav.style.backgroundColor = nextInnerColor.projectsColor;
-                navIcons.forEach((icon) => {
-                  icon.style.filter =
-                    "invert(14%) sepia(85%) saturate(4396%) hue-rotate(254deg) brightness(71%) contrast(112%)";
-                });
+                changeSection(
+                  sections,
+                  activeSection,
+                  2,
+                  svgAnimatedElements,
+                  projectsLinks,
+                  contactFormInputs,
+                  contactFormTextarea,
+                  hero,
+                  heroInnerContainer,
+                  nav,
+                  navIcons,
+                  nextHeroColor,
+                  nextInnerColor
+                );
                 swiper.enable(); // enable moving of swiper slides when Projects section becomes active
                 break;
               case "contact-link":
-                changeSection(sections, activeSection, 3);
-                heroInnerContainer.style.backgroundColor = nextInnerColor.contactColor;
-                hero.style.background = `linear-gradient(to top right, ${nextHeroColor.contactColor}, ${nextInnerColor.contactColor})`;
-                nav.style.backgroundColor = nextInnerColor.contactColor;
-                navIcons.forEach((icon) => {
-                  icon.style.filter =
-                    "invert(30%) sepia(85%) saturate(3901%) hue-rotate(326deg) brightness(93%) contrast(91%)";
-                });
+                changeSection(
+                  sections,
+                  activeSection,
+                  3,
+                  svgAnimatedElements,
+                  projectsLinks,
+                  contactFormInputs,
+                  contactFormTextarea,
+                  hero,
+                  heroInnerContainer,
+                  nav,
+                  navIcons,
+                  nextHeroColor,
+                  nextInnerColor
+                );
                 swiper.disable(); // disable moving of swiper slides when Projects section isn't active
                 break;
 
@@ -349,9 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // disable tab key on Swiper slides
-  document.querySelector(".swiper *").addEventListener("keydown", function (e) {
-    if (e.keyCode == 9) {
-      return;
-    }
+  document.querySelector(".swiper *").addEventListener("keydown", (e) => {
+    if (e.keyCode == 9) return;
   });
-});
+};

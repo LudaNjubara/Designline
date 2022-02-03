@@ -14,15 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/2.1.2/kute.min.js"
-      integrity="sha512-uTe+wUbchHcZHwvZwpVt4ve3FdUJPse9iC56mh6pZkxHccXx2vaSYyjlWV/Mv0NTcvGYkGZvCi1D/KZJ7qS2uQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <style>
       /* Variables */
@@ -70,10 +63,10 @@
         display: flex;
       }
 
-      #hero .hero-inner-container #home.closeSection,
-      #hero .hero-inner-container #about.closeSection,
-      #hero .hero-inner-container #projects.closeSection,
-      #hero .hero-inner-container #contact.closeSection {
+      #home.closeSection,
+      #about.closeSection,
+      #projects.closeSection,
+      #contact.closeSection {
         -webkit-animation: closeSection 1s cubic-bezier(0.37, 0.32, 0.01, 0.9) forwards;
         animation: closeSection 1s cubic-bezier(0.37, 0.32, 0.01, 0.9) forwards;
       }
@@ -119,7 +112,7 @@
         background-color: var(--hero-inner-purple);
       }
 
-      #hero .hero-inner-container #hero-inner-top-left-bg {
+      #hero-inner-top-left-bg {
         position: absolute;
         top: 0;
         left: 0;
@@ -127,7 +120,7 @@
         width: 60%;
       }
 
-      #hero .hero-inner-container #hero-inner-bottom-right-bg {
+      #hero-inner-bottom-right-bg {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -135,7 +128,7 @@
         width: 60%;
       }
 
-      #hero .hero-inner-container #header {
+      #header {
         position: absolute;
         top: 0;
         left: 0;
@@ -154,7 +147,7 @@
         padding: 15px 50px 0 50px;
       }
 
-      #hero .hero-inner-container #header .logo {
+      #header .logo {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -164,6 +157,9 @@
         font-size: 1.18rem;
         font-weight: 500;
         color: white;
+      }
+
+      #header .logo .logo-text {
         background: -webkit-gradient(linear, left top, right top, from(#bf09d8), to(#6f16b8));
         background: linear-gradient(to right, #bf09d8, #6f16b8);
         background-clip: text;
@@ -171,17 +167,17 @@
         -webkit-text-fill-color: transparent;
       }
 
-      #hero .hero-inner-container #header .logo img {
+      #header .logo img {
         display: inline-block;
         width: 50px;
         margin-right: 5px;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item + .nav-item {
+      #header .nav-list .nav-item + .nav-item {
         margin-left: 50px;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link {
+      #header .nav-list .nav-item .nav-link {
         position: relative;
         padding: 5px 7px;
         font-size: 1.1rem;
@@ -190,21 +186,21 @@
         color: rgba(255, 255, 255, 0.8);
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link.active {
+      #header .nav-list .nav-item .nav-link.active {
         color: white;
         font-weight: 300;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link .nav-icon {
+      #header .nav-list .nav-item .nav-link .nav-icon {
         display: none;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link .nav-link-text {
+      #header .nav-list .nav-item .nav-link .nav-link-text {
         pointer-events: none;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:after,
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:before {
+      #header .nav-list .nav-item .nav-link:after,
+      #header .nav-list .nav-item .nav-link:before {
         content: "";
         width: 5px;
         height: 5px;
@@ -214,44 +210,44 @@
         transition: width 0.8s, height 0.8s;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:after {
+      #header .nav-list .nav-item .nav-link:after {
         top: -1px;
         left: -1px;
         border-top: 2px solid #d4088c;
         border-left: 2px solid #d4088c;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:before {
+      #header .nav-list .nav-item .nav-link:before {
         bottom: -1px;
         right: -1px;
         border-bottom: 2px solid #d4088c;
         border-right: 2px solid #d4088c;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:hover,
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:focus {
+      #header .nav-list .nav-item .nav-link:hover,
+      #header .nav-list .nav-item .nav-link:focus {
         outline: none;
         border-top-right-radius: 0px;
         border-bottom-left-radius: 0px;
         color: white;
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:hover:before,
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:hover:after,
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:focus:before,
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:focus:after {
+      #header .nav-list .nav-item .nav-link:hover:before,
+      #header .nav-list .nav-item .nav-link:hover:after,
+      #header .nav-list .nav-item .nav-link:focus:before,
+      #header .nav-list .nav-item .nav-link:focus:after {
         width: calc(100% + 2px);
         height: calc(100% + 2px);
       }
 
-      #hero .hero-inner-container #header .nav-list .nav-item .nav-link:hover {
+      #header .nav-list .nav-item .nav-link:hover {
         color: white;
       }
 
-      #hero .hero-inner-container #home,
-      #hero .hero-inner-container #about,
-      #hero .hero-inner-container #projects,
-      #hero .hero-inner-container #contact {
+      #home,
+      #about,
+      #projects,
+      #contact {
         position: absolute;
         top: 0;
         left: 0;
@@ -264,7 +260,7 @@
         will-change: transform;
       }
 
-      #hero .hero-inner-container #home {
+      #home {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -286,13 +282,13 @@
         display: none;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-left,
-      #hero .hero-inner-container #home .home-wrapper .inner-right {
+      #home .home-wrapper .inner-left,
+      #home .home-wrapper .inner-right {
         -ms-flex-preferred-size: 50%;
         flex-basis: 50%;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-left {
+      #home .home-wrapper .inner-left {
         padding-right: 30px;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -306,7 +302,7 @@
         justify-content: center;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-left .hero-title {
+      #home .home-wrapper .inner-left .hero-title {
         position: relative;
         overflow: hidden;
         padding-bottom: 25px;
@@ -334,7 +330,7 @@
         animation: heroTekstAnimacija 1.5s 0.7s ease-out forwards, shine 4s 2s infinite linear;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-left .hero-desc {
+      #home .home-wrapper .inner-left .hero-desc {
         color: whitesmoke;
         font-weight: 300;
         line-height: 1.3;
@@ -346,64 +342,64 @@
         animation: heroTekstAnimacija 1.5s 1s ease-out forwards;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right {
+      #home .home-wrapper .inner-right {
         position: relative;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg {
+      #hero-svg {
         width: 100%;
         height: 100%;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .gornjiKvadratKapa {
+      #hero-svg .gornjiKvadratKapa.animating {
         will-change: transform;
         -webkit-animation: 2s kvadratKapaAnimacija ease-in-out infinite alternate;
         animation: 2s kvadratKapaAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .p {
+      #hero-svg .p.animating {
         will-change: transform;
         -webkit-animation: 2s kvadratAnimacija ease-in-out infinite alternate;
         animation: 2s kvadratAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .c1 {
+      #hero-svg .c1.animating {
         will-change: transform;
         -webkit-animation: 2s kvadratAnimacija ease-in-out infinite alternate;
         animation: 2s kvadratAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .c2 {
+      #hero-svg .c2.animating {
         will-change: transform;
         -webkit-animation: 2s kvadratAnimacija ease-in-out infinite alternate;
         animation: 2s kvadratAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .c3 {
+      #hero-svg .c3.animating {
         will-change: transform;
         -webkit-animation: 1.2s kvadratAnimacija ease-in-out infinite alternate;
         animation: 1.2s kvadratAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .l {
+      #hero-svg .l.animating {
         will-change: transform;
         -webkit-animation: 1.7s tockaAnimacija linear infinite alternate;
         animation: 1.7s tockaAnimacija linear infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .m2 {
+      #hero-svg .m2.animating {
         will-change: transform;
         -webkit-animation: 1.5s tockaAnimacija linear infinite alternate;
         animation: 1.5s tockaAnimacija linear infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .n1 {
+      #hero-svg .n1.animating {
         will-change: transform;
         -webkit-animation: 1.6s tockaAnimacija linear infinite alternate;
         animation: 1.6s tockaAnimacija linear infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .laptop {
+      #hero-svg .laptop.animating {
         will-change: transform;
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px);
@@ -412,7 +408,7 @@
         animation: 1.6s laptopAnimacija ease-in-out, 0.8s 1.6s sjenaAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .w {
+      #hero-svg .w.animating {
         will-change: transform;
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px);
@@ -421,7 +417,7 @@
         animation: 1.6s 0.2s laptopAnimacija ease-out, 0.8s 1.8s sjenaAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .x {
+      #hero-svg .x.animating {
         will-change: transform;
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px);
@@ -430,7 +426,7 @@
         animation: 1.6s 0.4s laptopAnimacija ease-out, 0.8s 2s sjenaAnimacija ease-in-out infinite alternate;
       }
 
-      #hero .hero-inner-container #home .home-wrapper .inner-right #hero-svg .y {
+      #hero-svg .y.animating {
         will-change: transform;
         -webkit-transform: translateY(-20px);
         transform: translateY(-20px);
@@ -440,14 +436,14 @@
       }
     </style>
 
-    <script type="text/javascript" src="js/app.min.js"></script>
-
     <link
       rel="stylesheet"
       href="styles/main.min.css"
       media="print"
       onload="this.media='all'; this.onload=null;"
     />
+
+    <script defer type="text/javascript" src="js/app.min.js"></script>
   </head>
 
   <body>
@@ -521,7 +517,9 @@
         </svg>
 
         <header id="header">
-          <a href="index.html" class="logo"><img src="images/mainLogo.svg" alt="logo" />DESIGNLINE</a>
+          <a href="index.html" class="logo"
+            ><img src="images/mainLogo.svg" alt="logo" /><span class="logo-text">DESIGNLINE</span></a
+          >
           <nav class="nav">
             <ul class="nav-list">
               <li class="nav-item">
@@ -969,7 +967,7 @@
                   <radialGradient id="ac" cx="650.00124" cy="405.08367" r="129.04019" xlink:href="#y" />
                 </defs>
                 <g class="b">
-                  <g class="c c3">
+                  <g class="c c3 animating">
                     <path
                       class="d"
                       d="M675,797.54263H623.77275l-57.02532-32.92335c-7.3442-4.24012-20.17314-3.70863-28.65339,1.18751l-54.96829,31.73584H431.92423v20.097h.01595c-.20889,2.87,1.39177,5.63961,4.92031,7.67658l103.29419,59.637c7.34471,4.24064,20.17313,3.70863,28.6539-1.1875l99.176-57.25943c4.4058-2.54377,6.751-5.76361,6.97735-8.86665H675Z"
@@ -999,7 +997,7 @@
                       d="M544.78841,864.85673,441.49422,805.21921c-7.34471-4.24013-6.42321-11.64658,2.05706-16.54271l99.176-57.25943a32.59211,32.59211,0,0,1,13.96653-3.96589,33.78622,33.78622,0,0,0-18.59975,3.96589L438.918,788.6765c-8.48076,4.89613-9.40174,12.30258-2.05755,16.54271l103.2947,59.63752c3.85733,2.22683,9.22836,3.12466,14.68737,2.77787A23.71966,23.71966,0,0,1,544.78841,864.85673Z"
                     />
                   </g>
-                  <g class="c c1">
+                  <g class="c c1 animating">
                     <path
                       class="i"
                       d="M933.86543,429.23252H898.58454l-39.27425-22.675c-5.05812-2.92006-13.89316-2.5539-19.734.81818l-37.85715,21.8568H766.456v13.841h.011c-.144,1.97663.95837,3.88371,3.38879,5.287l71.14009,41.07276c5.05816,2.92041,13.89316,2.55425,19.734-.81783l68.30381-39.43533c3.0343-1.752,4.64974-3.96957,4.8055-6.10657h.02625Z"
@@ -1029,18 +1027,18 @@
                       d="M844.187,475.59225l-71.14013-41.07276c-5.05812-2.92042-4.42372-8.02111,1.41675-11.39319L842.76779,383.691a22.44437,22.44437,0,0,1,9.61845-2.7313,23.27036,23.27036,0,0,0-12.80993,2.7313L771.27286,423.1263c-5.84082,3.37208-6.47522,8.47277-1.41706,11.39319l71.14009,41.07276a18.4605,18.4605,0,0,0,10.11553,1.91347A16.3355,16.3355,0,0,1,844.187,475.59225Z"
                     />
                   </g>
-                  <circle class="l" cx="169.51607" cy="81.90638" r="5.76561" />
+                  <circle class="l animating" cx="169.51607" cy="81.90638" r="5.76561" />
                   <path
                     class="m"
                     d="M853.84915,275.80637a3.69586,3.69586,0,1,1-3.69606-3.69567A3.69613,3.69613,0,0,1,853.84915,275.80637Z"
                   />
-                  <circle class="m m2" cx="117.45457" cy="427.57025" r="5.20395" />
+                  <circle class="m m2 animating" cx="117.45457" cy="427.57025" r="5.20395" />
                   <circle class="m" cx="66.69525" cy="365.93822" r="2.88351" />
                   <path
                     class="n n1"
                     d="M595.91152,3.40543A3.40561,3.40561,0,1,1,592.50608,0,3.40559,3.40559,0,0,1,595.91152,3.40543Z"
                   />
-                  <circle class="n n1" cx="698.98529" cy="733.78921" r="4.91833" />
+                  <circle class="n n1 animating" cx="698.98529" cy="733.78921" r="4.91833" />
                   <path
                     class="n"
                     d="M649.61361,694.53874a2.96246,2.96246,0,1,1-2.96228-2.96228A2.9623,2.9623,0,0,1,649.61361,694.53874Z"
@@ -1050,10 +1048,10 @@
                     d="M707.46162,681.23349a1.49108,1.49108,0,1,1-1.49125-1.49125A1.49137,1.49137,0,0,1,707.46162,681.23349Z"
                   />
                   <path
-                    class="o gornjiKvadratKapa"
+                    class="o gornjiKvadratKapa animating"
                     d="M166.679,254.4605,78.29387,203.43116c-6.284-3.62825-5.49595-9.96581,1.76055-14.15536l84.8612-48.99453c7.25651-4.18955,18.23316-4.64441,24.51749-1.01616l88.38514,51.029c6.28433,3.62825,5.496,9.96581-1.7602,14.15536L191.19685,253.444C183.94035,257.63353,172.96334,258.08875,166.679,254.4605Z"
                   />
-                  <g class="p">
+                  <g class="p animating">
                     <path
                       class="q"
                       d="M282.0607,242.40027H238.22752L189.43311,214.229c-6.28433-3.62826-17.261-3.17339-24.51749,1.01616l-47.03421,27.15512H74.07025v17.19641h.01351c-.17885,2.45526,1.19071,4.825,4.21046,6.56853l88.38479,51.029c6.28433,3.62826,17.26134,3.173,24.51784-1.01616l84.8612-48.99488c3.76982-2.17638,5.77661-4.93181,5.97033-7.58647h.03232Z"
@@ -1083,7 +1081,7 @@
                       d="M170.64362,299.99814,82.25883,248.9688c-6.28433-3.62825-5.49628-9.9658,1.7602-14.155l84.8612-48.99488a27.88783,27.88783,0,0,1,11.95062-3.39337,28.91359,28.91359,0,0,0-15.91523,3.39337L80.05442,234.8138c-7.2565,4.1892-8.04453,10.52675-1.76055,14.155L166.679,299.99814c3.30077,1.90567,7.8966,2.67382,12.5676,2.37721A20.30173,20.30173,0,0,1,170.64362,299.99814Z"
                     />
                   </g>
-                  <g class="c c2">
+                  <g class="animating">
                     <path
                       class="t"
                       d="M167.63841,643.02828h-35.326L92.98818,620.32457c-5.06451-2.924-13.91125-2.55745-19.75917.81889L35.32325,643.02828H.015V656.887H.026c-.14406,1.97911.95975,3.889,3.393,5.29371L74.65,703.306c5.06486,2.92431,13.91125,2.55744,19.75953-.81889l68.39108-39.48571c3.03821-1.75417,4.65542-3.97455,4.81153-6.11438h.02626Z"
@@ -1114,17 +1112,17 @@
                     />
                   </g>
                 </g>
-                <g class="laptop">
+                <g class="laptop animating">
                   <path
-                    class="w"
+                    class="w animating"
                     d="M468.74215,751.74774a15.49982,15.49982,0,0,1-7.56415-1.9124L120.09966,552.91417c-2.24522-1.29576-3.53423-3.07689-3.53423-4.88888a4.62024,4.62024,0,0,1,2.62983-3.93268L322.72717,426.58353c3.5204-2.04085,9.45241-1.80845,13.50288.52334L677.3052,624.028c2.24525,1.29575,3.53422,3.07653,3.53422,4.88888a4.6077,4.6077,0,0,1-2.62659,3.92913L474.67732,750.35832A12.05278,12.05278,0,0,1,468.74215,751.74774Zm-140.0968-324.7796a10.23674,10.23674,0,0,0-5.03116,1.15383L120.08227,545.63105a2.981,2.981,0,0,0-1.74281,2.39424c0,1.16057.9665,2.38039,2.64721,3.35044L462.065,748.2969c3.47887,2.01317,8.7421,2.2555,11.72529.523L677.32581,631.3076a2.97715,2.97715,0,0,0,1.73958-2.39068c0-1.16093-.96685-2.3804-2.64721-3.35079L335.343,428.64531A13.76227,13.76227,0,0,0,328.64535,426.96814Z"
                   />
                   <path
-                    class="x"
+                    class="x animating"
                     d="M468.74215,787.57859a15.50012,15.50012,0,0,1-7.56415-1.91276L120.09966,588.74466c-2.24522-1.29575-3.53423-3.07688-3.53423-4.88888a4.62067,4.62067,0,0,1,2.62983-3.93268L322.72717,462.414c3.5204-2.04049,9.45241-1.80845,13.50288.52334L677.3052,659.85853c2.24525,1.29575,3.53422,3.07688,3.53422,4.88888a4.61694,4.61694,0,0,1-2.62659,3.93268L474.67732,786.18917A12.05289,12.05289,0,0,1,468.74215,787.57859Zm-140.0968-324.78a10.23674,10.23674,0,0,0-5.03116,1.15383L120.08227,581.46155a2.98149,2.98149,0,0,0-1.74281,2.39423c0,1.16057.9665,2.3804,2.64721,3.35044L462.065,784.12739c3.47887,2.01317,8.7421,2.25231,11.72529.52334l203.5355-117.50909a2.97746,2.97746,0,0,0,1.73958-2.39423c0-1.16057-.96685-2.3804-2.64721-3.35044L335.343,464.4758A13.76227,13.76227,0,0,0,328.64535,462.79863Z"
                   />
                   <path
-                    class="y"
+                    class="y animating"
                     d="M468.74215,823.40908a15.4963,15.4963,0,0,1-7.56415-1.91276L120.09966,624.57551c-2.24522-1.29611-3.53423-3.07689-3.53423-4.88924a4.62064,4.62064,0,0,1,2.62983-3.93267L322.72717,498.24487c3.5204-2.0373,9.45241-1.80881,13.50288.523L677.3052,695.689c2.24525,1.29611,3.53422,3.07688,3.53422,4.88888a4.61651,4.61651,0,0,1-2.62659,3.93268L474.67732,822.01966A12.05278,12.05278,0,0,1,468.74215,823.40908Zm-140.0968-324.7796a10.2328,10.2328,0,0,0-5.03116,1.15383L120.08227,617.292a2.98149,2.98149,0,0,0-1.74281,2.39423c0,1.16093.9665,2.3804,2.64721,3.35079L462.065,819.95788c3.47887,2.01317,8.7421,2.25586,11.72529.52334l203.5355-117.50873a2.978,2.978,0,0,0,1.73958-2.39459c0-1.16057-.96685-2.38-2.64721-3.35044L335.343,500.30629A13.762,13.762,0,0,0,328.64535,498.62948Z"
                   />
                   <path
@@ -1554,7 +1552,7 @@
 
         <section id="projects">
           <div class="projects-wrapper">
-            <div class="projects-container-2">
+            <div class="projects-container">
               <div class="swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
@@ -1564,32 +1562,27 @@
                   </div>
                   <div class="swiper-slide">
                     <a href="https://moda-designs.netlify.app/" target="_blank" rel="noopener">
-                      <img loading="lazy" src="images/projekti/moda.webp" alt="" />
-                      <div class="project-cover"></div>
+                      <img loading="lazy" src="images/projekti/moda.webp" alt="Moda image" />
                     </a>
                   </div>
                   <div class="swiper-slide">
                     <a href="https://bachatainspire.com/" target="_blank" rel="noopener">
                       <img loading="lazy" src="images/projekti/Bachata.webp" alt="Bachata image" />
-                      <div class="project-cover"></div>
                     </a>
                   </div>
                   <div class="swiper-slide">
                     <a href="https://tunes-test-site.netlify.app/" target="_blank" rel="noopener">
                       <img loading="lazy" src="images/projekti/Tunes.webp" alt="Tunes image" />
-                      <div class="project-cover"></div>
                     </a>
                   </div>
                   <div class="swiper-slide">
                     <a href="https://spotify-clone-test.netlify.app/" target="_blank" rel="noopener">
                       <img loading="lazy" src="images/projekti/spotify.webp" alt="Spotify Clone Image" />
-                      <div class="project-cover"></div>
                     </a>
                   </div>
                   <div class="swiper-slide">
                     <a href="https://pictures-test.netlify.app/" target="_blank" rel="noopener">
                       <img loading="lazy" src="images/projekti/Pictures.webp" alt="Pictures image" />
-                      <div class="project-cover"></div>
                     </a>
                   </div>
                 </div>
@@ -1652,6 +1645,15 @@
       </main>
     </div>
 
-    <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/kute.js/2.1.2/kute.min.js"
+      integrity="sha512-uTe+wUbchHcZHwvZwpVt4ve3FdUJPse9iC56mh6pZkxHccXx2vaSYyjlWV/Mv0NTcvGYkGZvCi1D/KZJ7qS2uQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script defer type="text/javascript" src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
   </body>
 </html>
